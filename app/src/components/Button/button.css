@@ -1,0 +1,10 @@
+.button {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  background-color: #7d86c8;
+  border-radius: 20px;
+}
+.button:hover {
+  background-color: #6a76c0;
+}/*# sourceMappingURL=button.css.map */

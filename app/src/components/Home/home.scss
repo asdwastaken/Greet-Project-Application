@@ -7,12 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
 
     h1 {
         font-size: 3em;
         font-weight: 600;
-
     }
 
     h3 {
@@ -29,9 +27,14 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 80%;
 }
 
+.home-headings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
 
 .home-images-container {
     display: flex;
@@ -47,6 +50,12 @@
     max-width: 30%;
     margin-right: 30px;
     border-radius: 10px;
-    border: 3px solid #5566B8;
+    border: 3px solid #7d86c8;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.button-container{
+    display: flex;
+    width: fit-content;
+    margin-top: 50px;
 }

@@ -1,0 +1,14 @@
+@import '../../styles/variables/variables';
+
+.button{
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #7d86c8;
+    border-radius: 20px;
+
+    &:hover{
+    background-color: #6a76c0;
+
+    }
+}
