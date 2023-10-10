@@ -1,0 +1,14 @@
+@import '../src//styles/variables/variables';
+@import '../src//styles//mixins/mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $background-color;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
