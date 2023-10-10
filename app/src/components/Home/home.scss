@@ -1,0 +1,52 @@
+@import '../../styles/variables/variables';
+
+.home {
+
+    color: $primary-text-color;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    h1 {
+        font-size: 3em;
+        font-weight: 600;
+
+    }
+
+    h3 {
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+
+
+}
+
+.home-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+
+
+.home-images-container {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+
+}
+
+.home-image {
+    object-fit: cover;
+    height: auto;
+    max-width: 30%;
+    margin-right: 30px;
+    border-radius: 10px;
+    border: 3px solid #5566B8;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
