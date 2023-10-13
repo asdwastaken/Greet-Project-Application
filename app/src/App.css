@@ -10,8 +10,12 @@ body {
   font-size: 20px;
 }
 
+.App {
+  height: 100vh;
+}
+
 main {
   position: relative;
   top: 80px;
-  padding: 80px 50px 0 80px;
+  padding: 80px 0 80px 0;
 }/*# sourceMappingURL=app.css.map */

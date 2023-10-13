@@ -16,15 +16,15 @@
 .home-container {
   display: flex;
   width: 100%;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
 .home-headings {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
+  margin-left: 20px;
 }
 
 .home-images-container {
@@ -32,17 +32,23 @@
   height: 100%;
   width: 50%;
   justify-content: center;
+  align-items: center;
+  margin-left: 100px;
 }
 
 .home-image {
   -o-object-fit: cover;
      object-fit: cover;
   height: auto;
-  max-width: 30%;
+  max-width: 28%;
   margin-right: 30px;
   border-radius: 10px;
   border: 3px solid #7d86c8;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#home-image-second {
+  max-width: 26%;
 }
 
 .button-container {

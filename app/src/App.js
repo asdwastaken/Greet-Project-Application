@@ -1,16 +1,21 @@
 import './app.css';
-import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
+import RoutesComp from './components/RoutesComp';
+import { ContextProvider } from './context/context';
 
 function App() {
-  return (
-    <div className="App">
-      <Navigation />
 
-      <main>
-        <Home />
-      </main>
-    </div>
+  
+  return (
+    <ContextProvider>
+      <div className="App">
+        <Navigation />
+
+        <main>
+          <RoutesComp />
+        </main>
+      </div>
+    </ContextProvider>
   );
 }
 

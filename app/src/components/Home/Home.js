@@ -1,8 +1,8 @@
 import './home.css';
 
 import homeImage1 from '../../content/images/home-image1.png';
-import homeImage2 from '../../content/images/home-image2.png';
-import homeImage3 from '../../content/images/home-image3.png';
+import homeImage2 from '../../content/images/home-image3.png';
+import homeImage3 from '../../content/images/home-image2.png';
 import Button from '../Button/Button';
 
 
@@ -23,9 +23,9 @@ export default function Home() {
                 </div>
 
                 <div className="home-images-container">
-                    <img src={homeImage1} className="home-image" />
-                    <img src={homeImage3} className="home-image" />
-                    <img src={homeImage2} className="home-image" />
+                    <img src={homeImage1} className="home-image" id="home-image-first"/>
+                    <img src={homeImage2} className="home-image" id="home-image-second"/>
+                    <img src={homeImage3} className="home-image" id="home-image-third"/>
                 </div>
             </div>
         </div>

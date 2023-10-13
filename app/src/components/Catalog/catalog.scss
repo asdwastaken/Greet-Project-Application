@@ -1,0 +1,207 @@
+@import '../../styles/variables/variables';
+
+.catalog {
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px;
+    grid-template-rows: auto;
+    gap: 40px;
+    justify-content: center;
+
+    .image-container {
+        position: relative;
+
+        span {
+
+            font-size: 1.2em;
+            font-weight: 500;
+            width: 240px;
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+        }
+    }
+
+
+
+
+    p {
+        font-size: 0.8em;
+    }
+}
+
+.card-image {
+    height: 250px;
+    width: 210px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card {
+    width: 250px;
+    height: auto;
+    border: 1px solid #7d86c8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: box-shadow 0.15s ease-in-out;
+
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 20px;
+    }
+
+
+
+
+    .card-buttons-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        padding: 0 10px;
+    }
+
+    .card-btn {
+        color: white;
+        background-color: #7d86c8;
+        font-size: 0.8em;
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: none;
+        height: 50px;
+
+        &:hover {
+            background-color: #6a76c0;
+
+        }
+    }
+
+
+
+    div {
+        width: 250px;
+    }
+
+    .description-container {
+        position: relative;
+        height: 80px;
+        margin-top: 60px;
+        padding-top: 40px;
+
+        span {
+            font-size: 0.9em;
+            cursor: pointer;
+            font-weight: 400;
+
+            &:hover {
+                color: #7d86c8;
+            }
+        }
+    }
+
+    .description-modal {
+        opacity: 0.9;
+        background-color: $nav-color;
+        color: white;
+        padding: 10px;
+        justify-content: center;
+        position: absolute;
+        border-radius: 20px;
+        z-index: 3;
+        left: 20px;
+        top: -70px;
+        cursor: text;
+
+        p {
+            max-height: 100px;
+            overflow-y: scroll;
+            padding: 0 10px;
+            text-align: start;
+
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: white;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 5px grey;
+                border-radius: 10px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: rgb(200, 200, 200);
+            }
+        }
+    }
+
+
+
+    .categories-container {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        position: relative;
+        align-items: center;
+
+        .categories-modal {
+            flex-direction: column;
+            opacity: 0.9;
+            background-color: $nav-color;
+            padding: 10px;
+            justify-content: center;
+            position: absolute;
+            border-radius: 20px;
+            z-index: 3;
+            left: 20px;
+            top: 30px;
+            cursor: text;
+
+
+        }
+
+        span {
+            font-size: 0.9em;
+            cursor: pointer;
+            font-weight: 400;
+            margin-bottom: 0;
+            width: fit-content;
+
+            &:hover {
+                color: #7d86c8;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+            font-size: 0.8em;
+            margin-top: 5px;
+
+            &:hover {
+                color: #7d86c8;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
