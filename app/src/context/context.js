@@ -10,9 +10,57 @@ export const ContextProvider = ({
 
     const [products, setProducts] = useState([]);
 
+    const toggleDescriptionModal = (id) => {
+        setProducts(state => state.map(x => {
+            if (x.id == id) {
+                const updatedProduct = { ...x, toggledDescription: !x.toggledDescription };
+                return updatedProduct;
+            }
+            return x;
+        }))
+    }
+
+
+    const closeDescriptionModal = (id) => {
+        setProducts(state => state.map(x => {
+            if (x.id == id) {
+                const updatedProduct = { ...x, toggledDescription: false };
+                return updatedProduct;
+            }
+            return x;
+        }))
+    }
+
+
+    const toggleCategoriesModal = (id) => {
+        setProducts(state => state.map(x => {
+            if (x.id == id) {
+                const updatedProduct = { ...x, toggledCategories: !x.toggledCategories };
+                return updatedProduct;
+            }
+            return x;
+        }))
+    }
+
+
+    const closeCategoriesModal = (id) => {
+        setProducts(state => state.map(x => {
+            if (x.id == id) {
+                const updatedProduct = { ...x, toggledCategories: false };
+                return updatedProduct;
+            }
+            return x;
+        }))
+    }
+
+
     const contextValues = {
         products,
-        setProducts
+        setProducts,
+        toggleDescriptionModal,
+        closeDescriptionModal,
+        toggleCategoriesModal,
+        closeCategoriesModal
     };
 
 

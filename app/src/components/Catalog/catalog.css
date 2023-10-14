@@ -12,10 +12,10 @@
 .catalog .image-container span {
   font-size: 1.2em;
   font-weight: 500;
-  width: 240px;
   position: absolute;
   bottom: -60px;
   left: 0;
+  right: 0;
 }
 .catalog p {
   font-size: 0.8em;
@@ -165,4 +165,12 @@
 
 .hidden {
   display: none;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
 }/*# sourceMappingURL=catalog.css.map */

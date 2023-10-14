@@ -3,8 +3,8 @@ const url = 'https://greet.bg/wp-json/wc/store/products';
 
 
 
-export const getAllPerPage = () => {
-    return fetch(url)
+export const getAllPerPage = (pageNumber) => {
+    return fetch(`${url}?page=${pageNumber}`)
         .then(res => res.json())
         .then(products => {
             console.log(products);
