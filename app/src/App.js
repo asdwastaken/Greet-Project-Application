@@ -5,11 +5,13 @@ import { ContextProvider } from './context/context';
 
 function App() {
 
-  
+
   return (
     <ContextProvider>
       <div className="App">
-        <Navigation />
+        <header>
+          <Navigation />
+        </header>
 
         <main>
           <RoutesComp />

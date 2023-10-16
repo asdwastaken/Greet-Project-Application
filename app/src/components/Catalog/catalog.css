@@ -14,6 +14,7 @@
   font-weight: 500;
   position: absolute;
   bottom: -60px;
+  height: 50px;
   left: 0;
   right: 0;
 }
@@ -89,7 +90,7 @@
 .card .description-container span:hover {
   color: #7d86c8;
 }
-.card .description-modal {
+.card .description-popup {
   opacity: 0.9;
   background-color: #23282D;
   color: white;
@@ -102,24 +103,24 @@
   top: -70px;
   cursor: text;
 }
-.card .description-modal p {
+.card .description-popup p {
   max-height: 100px;
   overflow-y: scroll;
   padding: 0 10px;
   text-align: start;
 }
-.card .description-modal p::-webkit-scrollbar {
+.card .description-popup p::-webkit-scrollbar {
   width: 5px;
 }
-.card .description-modal p::-webkit-scrollbar-thumb {
+.card .description-popup p::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 10px;
 }
-.card .description-modal p::-webkit-scrollbar-track {
+.card .description-popup p::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
-.card .description-modal p::-webkit-scrollbar-thumb:hover {
+.card .description-popup p::-webkit-scrollbar-thumb:hover {
   background: rgb(200, 200, 200);
 }
 .card .categories-container {
@@ -129,7 +130,7 @@
   position: relative;
   align-items: center;
 }
-.card .categories-container .categories-modal {
+.card .categories-container .categories-popup {
   flex-direction: column;
   opacity: 0.9;
   background-color: #23282D;
@@ -173,4 +174,65 @@
   align-items: center;
   width: 100%;
   margin-top: 20px;
+}
+
+@media (max-width: 1600px) {
+  .catalog {
+    grid-template-columns: 250px 250px 250px 250px;
+  }
+}
+@media (max-width: 1300px) {
+  .catalog {
+    grid-template-columns: 250px 250px 250px;
+  }
+}
+@media (max-width: 950px) {
+  .catalog {
+    grid-template-columns: 250px 250px;
+  }
+}
+@media (max-width: 768px) {
+  .catalog {
+    grid-template-columns: 300px;
+  }
+  .card-image {
+    height: 300px;
+    width: 260px;
+    border-radius: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card {
+    width: 300px;
+  }
+  .card div {
+    width: 300px;
+  }
+  .card .description-container {
+    margin-top: 20px;
+  }
+  .card .categories-container {
+    height: 80px;
+  }
+}
+@media (max-width: 450px) {
+  .catalog {
+    grid-template-columns: 250px;
+  }
+  .card-image {
+    height: 250px;
+    width: 210px;
+    border-radius: 20px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .card {
+    width: 250px;
+  }
+  .card div {
+    width: 250px;
+  }
+  .card .description-container {
+    margin-top: 40px;
+  }
 }/*# sourceMappingURL=catalog.css.map */

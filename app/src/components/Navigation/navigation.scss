@@ -1,6 +1,7 @@
 @import '../../styles/variables/variables';
 
-.navigation {
+.navigation,
+.navigation-mobile {
     position: fixed;
     background-color: $nav-color;
     width: 100%;
@@ -12,9 +13,14 @@
     z-index: 5;
 }
 
+.navigation-mobile {
+    display: none;
+}
+
 
 .nav-container {
     display: flex;
+    padding-left: 30px;
 
     .nav-link {
         color: white;
@@ -31,3 +37,66 @@
         }
     }
 }
+
+.nav-container-mobile {
+    display: none;
+    padding-left: 30px;
+
+
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        margin-right: 40px;
+        font-size: 1em;
+        transition: all 0s;
+        text-underline-offset: 8px;
+
+        &:hover {
+            color: rgb(200, 200, 200);
+            text-decoration: underline;
+            text-decoration-color: #7d86c8;
+        }
+    }
+}
+
+.nav-icon {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+
+@media (max-width:768px) {
+    .navigation {
+        display: none;
+    }
+
+    .navigation-mobile {
+        display: flex;
+    }
+
+    .open {
+        height: 100vh;
+    }
+
+   
+
+    .nav-container {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .nav-link {
+            margin-bottom: 20px;
+            margin-right: 0;
+            font-size: 1.4em;
+        }
+    }
+
+
+}
+

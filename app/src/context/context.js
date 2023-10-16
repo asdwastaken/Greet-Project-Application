@@ -10,7 +10,7 @@ export const ContextProvider = ({
 
     const [products, setProducts] = useState([]);
 
-    const toggleDescriptionModal = (id) => {
+    const toggleDescriptionPopup = (id) => {
         setProducts(state => state.map(x => {
             if (x.id == id) {
                 const updatedProduct = { ...x, toggledDescription: !x.toggledDescription };
@@ -21,7 +21,7 @@ export const ContextProvider = ({
     }
 
 
-    const closeDescriptionModal = (id) => {
+    const closeDescriptionPopup = (id) => {
         setProducts(state => state.map(x => {
             if (x.id == id) {
                 const updatedProduct = { ...x, toggledDescription: false };
@@ -32,7 +32,7 @@ export const ContextProvider = ({
     }
 
 
-    const toggleCategoriesModal = (id) => {
+    const toggleCategoriesPopup = (id) => {
         setProducts(state => state.map(x => {
             if (x.id == id) {
                 const updatedProduct = { ...x, toggledCategories: !x.toggledCategories };
@@ -43,7 +43,7 @@ export const ContextProvider = ({
     }
 
 
-    const closeCategoriesModal = (id) => {
+    const closeCategoriesPopup = (id) => {
         setProducts(state => state.map(x => {
             if (x.id == id) {
                 const updatedProduct = { ...x, toggledCategories: false };
@@ -57,10 +57,10 @@ export const ContextProvider = ({
     const contextValues = {
         products,
         setProducts,
-        toggleDescriptionModal,
-        closeDescriptionModal,
-        toggleCategoriesModal,
-        closeCategoriesModal
+        toggleDescriptionPopup,
+        closeDescriptionPopup,
+        toggleCategoriesPopup,
+        closeCategoriesPopup
     };
 
 

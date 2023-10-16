@@ -11,10 +11,10 @@ export default function Catalog() {
 
     const { products,
         setProducts,
-        toggleDescriptionModal,
-        closeDescriptionModal,
-        toggleCategoriesModal,
-        closeCategoriesModal } = useContext(context);
+        toggleDescriptionPopup,
+        closeDescriptionPopup,
+        toggleCategoriesPopup,
+        closeCategoriesPopup } = useContext(context);
 
 
     const [loading, setLoading] = useState(false);
@@ -65,13 +65,13 @@ export default function Catalog() {
                                     <img src={x.images[0].src} className="card-image" />
                                     <span dangerouslySetInnerHTML={{ __html: name[i] }}></span>
                                 </div>
-                                <div className="description-container" onMouseLeave={() => closeDescriptionModal(x.id)}>
-                                    <span onMouseOver={() => toggleDescriptionModal(x.id)} >Description</span>
-                                    <div dangerouslySetInnerHTML={{ __html: description[i] }} className={x.toggledDescription ? "description-modal" : "description-modal hidden"}  ></div>
+                                <div className="description-container" onMouseLeave={() => closeDescriptionPopup(x.id)}>
+                                    <span onMouseOver={() => toggleDescriptionPopup(x.id)} onClick={() => toggleDescriptionPopup(x.id)}>Description</span>
+                                    <div dangerouslySetInnerHTML={{ __html: description[i] }} className={x.toggledDescription ? "description-popup" : "description-popup hidden"}  ></div>
                                 </div>
-                                <div className="categories-container" onMouseLeave={() => closeCategoriesModal(x.id)}>
-                                    <span onMouseOver={() => toggleCategoriesModal(x.id)} >Categories</span>
-                                    <div className={x.toggledCategories ? "categories-modal" : "categories-modal hidden"} style={x.toggledCategories ? { display: "flex" } : {}}>
+                                <div className="categories-container" onMouseLeave={() => closeCategoriesPopup(x.id)}>
+                                    <span onMouseOver={() => toggleCategoriesPopup(x.id)} onClick={() => toggleCategoriesPopup(x.id)}>Categories</span>
+                                    <div className={x.toggledCategories ? "categories-popup" : "categories-popup hidden"} style={x.toggledCategories ? { display: "flex" } : {}}>
                                         {x.categories.map(category => {
                                             return (
                                                 <Link key={category.id} to={category.link}>{category.name} </Link>
@@ -93,13 +93,13 @@ export default function Catalog() {
                                     <img src={x.images[0].src} className="card-image" />
                                     <span dangerouslySetInnerHTML={{ __html: name[i] }}></span>
                                 </div>
-                                <div className="description-container" onMouseLeave={() => closeDescriptionModal(x.id)}>
-                                    <span onMouseOver={() => toggleDescriptionModal(x.id)} >Description</span>
-                                    <div dangerouslySetInnerHTML={{ __html: description[i] }} className={x.toggledDescription ? "description-modal" : "description-modal hidden"}  ></div>
+                                <div className="description-container" onMouseLeave={() => closeDescriptionPopup(x.id)} >
+                                    <span onMouseOver={() => toggleDescriptionPopup(x.id)} onClick={() => toggleDescriptionPopup(x.id)}>Description</span>
+                                    <div dangerouslySetInnerHTML={{ __html: description[i] }} className={x.toggledDescription ? "description-popup" : "description-popup hidden"}  ></div>
                                 </div>
-                                <div className="categories-container" onMouseLeave={() => closeCategoriesModal(x.id)}>
-                                    <span onMouseOver={() => toggleCategoriesModal(x.id)} >Categories</span>
-                                    <div className={x.toggledCategories ? "categories-modal" : "categories-modal hidden"} style={x.toggledCategories ? { display: "flex" } : {}}>
+                                <div className="categories-container" onMouseLeave={() => closeCategoriesPopup(x.id)}>
+                                    <span onMouseOver={() => toggleCategoriesPopup(x.id)} onClick={() => toggleCategoriesPopup(x.id)}>Categories</span>
+                                    <div className={x.toggledCategories ? "categories-popup" : "categories-popup hidden"} style={x.toggledCategories ? { display: "flex" } : {}}>
                                         {x.categories.map(category => {
                                             return (
                                                 <Link key={category.id} to={category.link}>{category.name} </Link>
