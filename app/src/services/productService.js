@@ -7,7 +7,6 @@ export const getAllPerPage = (pageNumber) => {
     return fetch(`${url}?page=${pageNumber}`)
         .then(res => res.json())
         .then(products => {
-            console.log(products);
             return products;
         })
         .catch(error => {
