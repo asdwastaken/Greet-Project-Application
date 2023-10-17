@@ -23,9 +23,13 @@ export default function Home() {
                 </div>
 
                 <div className="home-images-container">
-                    <img src={homeImage1} className="home-image" id="home-image-first"/>
-                    <img src={homeImage2} className="home-image" id="home-image-second"/>
-                    <img src={homeImage3} className="home-image" id="home-image-third"/>
+                    <img src={homeImage1} className="home-image" id="home-image-first" />
+                    <img src={homeImage2} className="home-image" id="home-image-second" />
+                    <img src={homeImage3} className="home-image" id="home-image-third" />
+                </div>
+
+                <div className="button-container-mobile">
+                    <Button path='/catalog' value='Order Now' />
                 </div>
             </div>
         </div>

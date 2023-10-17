@@ -11,8 +11,20 @@
   z-index: 5;
 }
 
+.nav-logo {
+  height: 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
 .navigation-mobile {
   display: none;
+}
+.navigation-mobile .nav-logo {
+  left: 25px;
 }
 
 .nav-container {

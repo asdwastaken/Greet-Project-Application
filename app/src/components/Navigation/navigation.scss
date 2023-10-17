@@ -13,8 +13,20 @@
     z-index: 5;
 }
 
+.nav-logo {
+    height: 25px;
+    width: fit-content;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
 .navigation-mobile {
     display: none;
+
+    .nav-logo {
+        left: 25px;
+    }
 }
 
 
@@ -79,7 +91,7 @@
         height: 100vh;
     }
 
-   
+
 
     .nav-container {
         display: none;
@@ -99,4 +111,3 @@
 
 
 }
-

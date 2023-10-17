@@ -1,8 +1,8 @@
-import { useContext, useState } from 'react';
 import './navigation.css';
+import { useState } from 'react';
+import logo from '../../content/images/greet-logo.png';
 
 import { Link } from 'react-router-dom';
-import { context } from '../../context/context';
 
 
 export default function Navigation() {
@@ -17,6 +17,7 @@ export default function Navigation() {
     return (
         <>
             <nav className="navigation">
+                <img src={logo} className='nav-logo' />
                 <div className="nav-container">
                     <Link to='/' className="nav-link">Home</Link>
                     <Link to='/about' className="nav-link">About</Link>
@@ -26,6 +27,8 @@ export default function Navigation() {
             </nav>
 
             <nav className={toggleMenu ? "navigation-mobile open" : "navigation-mobile"}>
+                <img src={logo} className='nav-logo' />
+
                 <div className={toggleMenu ? "nav-container-mobile nav-menu" : "nav-container-mobile"}>
                     <Link to='/' className="nav-link" onClick={toggleNavMenu}>Home</Link>
                     <Link to='/about' className="nav-link" onClick={toggleNavMenu}>About</Link>
