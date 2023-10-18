@@ -16,8 +16,8 @@ function App() {
 
         <main>
           <RoutesComp />
-        </main>
         <Footer />
+        </main>
       </div>
     </ContextProvider>
   );
