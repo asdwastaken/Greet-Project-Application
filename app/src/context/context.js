@@ -10,6 +10,44 @@ export const ContextProvider = ({
 
     const [products, setProducts] = useState([]);
 
+    const [pageNumber, setPageNumber] = useState(1);
+    const [names, setNames] = useState([]);
+    const [description, setDescription] = useState([]);
+
+
+    const [selectedSortOption, setSelectedSortOption] = useState('');
+
+
+    const sortProducts = (option) => {
+        const sortedProducts = [...products];
+        const sortedNames = [...names];
+        const updatedDescription = [];
+
+
+        switch (option) {
+            case 'ascending':
+                sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+                sortedNames.sort((a, b) => a.localeCompare(b));
+                sortedProducts.forEach(x => updatedDescription.push(x.short_description));
+                break;
+            case 'descending':
+                sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+                sortedNames.sort((a, b) => b.localeCompare(a));
+                sortedProducts.forEach(x => updatedDescription.push(x.short_description));
+                break;
+        }
+        setProducts(sortedProducts);
+        setNames(sortedNames);
+        setDescription(updatedDescription);
+    };
+
+
+    const onSortChangeHandler = (e) => {
+        const selectedOption = e.target.value;
+        setSelectedSortOption(selectedOption);
+        sortProducts(selectedOption);
+    }
+
     const toggleDescriptionPopup = (id) => {
         setProducts(state => state.map(x => {
             if (x.id == id) {
@@ -60,7 +98,16 @@ export const ContextProvider = ({
         toggleDescriptionPopup,
         closeDescriptionPopup,
         toggleCategoriesPopup,
-        closeCategoriesPopup
+        closeCategoriesPopup,
+        names,
+        setNames,
+        description,
+        setDescription,
+        pageNumber,
+        setPageNumber,
+        selectedSortOption,
+        onSortChangeHandler,
+        sortProducts
     };
 
 

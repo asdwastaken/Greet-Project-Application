@@ -24,4 +24,11 @@
 }
 .footer-link:hover {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .footer-link {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }/*# sourceMappingURL=footer.css.map */

@@ -1,7 +1,7 @@
 .catalog {
   padding: 0 50px;
   display: grid;
-  margin-top: 80px;
+  margin-top: 50px;
   grid-template-columns: 250px 250px 250px 250px 250px;
   grid-template-rows: auto;
   gap: 40px;
@@ -177,6 +177,18 @@
   align-items: center;
   width: 100%;
   margin-top: 20px;
+}
+
+.sort-filter-container {
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.dropdown-sort {
+  margin-right: 40px;
 }
 
 @media (max-width: 1600px) {

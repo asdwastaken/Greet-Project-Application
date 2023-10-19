@@ -14,14 +14,36 @@ export default function Catalog() {
         toggleDescriptionPopup,
         closeDescriptionPopup,
         toggleCategoriesPopup,
-        closeCategoriesPopup } = useContext(context);
+        closeCategoriesPopup,
+        names,
+        setNames,
+        description,
+        setDescription,
+        pageNumber,
+        setPageNumber,
+        selectedSortOption,
+        onSortChangeHandler,
+        sortProducts } = useContext(context);
 
 
     const [loading, setLoading] = useState(false);
 
+    const [lastCardInViewRef, lastCardInView] = useInView({
+        triggerOnce: true,
+    });
+
+
+
     useEffect(() => {
         loadMoreProducts();
     }, []);
+
+    useEffect(() => {
+        if (lastCardInView) {
+            loadMoreProducts();
+        }
+    }, [lastCardInView]);
+
 
     const loadMoreProducts = () => {
         if (!loading) {
@@ -30,40 +52,49 @@ export default function Catalog() {
                 .then((result) => {
                     setProducts((state) => [...state, ...result]);
                     setDescription((prevDescription) => [...prevDescription, ...result.map((x) => x.short_description)]);
-                    setName((prevName) => [...prevName, ...result.map((x) => x.name)]);
+                    setNames((prevNames) => [...prevNames, ...result.map((x) => x.name)]);
                     setPageNumber(pageNumber + 1);
                     setLoading(false);
                 });
         }
     };
 
-    const [lastCardInViewRef, lastCardInView] = useInView({
-        triggerOnce: true,
-    });
 
-    useEffect(() => {
-        if (lastCardInView) {
-            loadMoreProducts();
-        }
-    }, [lastCardInView]);
 
-    const [pageNumber, setPageNumber] = useState(1);
-    const [description, setDescription] = useState('');
-    const [name, setName] = useState('');
 
 
 
 
     return (
         <>
+            <div className="sort-filter-container">
+                <div className="dropdown-sort">
+                    <form onSubmit={sortProducts}>
+                        <select className="form-select" value={selectedSortOption} onChange={onSortChangeHandler}>
+                            <option value="" disabled selected>Sort</option>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
+                    </form>
+                </div>
+
+                <div className="dropdown-filter">
+                    <form onSubmit={sortProducts}>
+                   
+                    </form>
+                </div>
+            </div>
+
             <div className="catalog">
+
+
                 {products.map((x, i) => {
                     if (i === products.length - 1) {
                         return (
                             <div key={x.id} className="card" ref={lastCardInViewRef}>
                                 <div className="image-container">
                                     <img src={x.images[0].src} className="card-image" />
-                                    <span dangerouslySetInnerHTML={{ __html: name[i] }}></span>
+                                    <span dangerouslySetInnerHTML={{ __html: names[i] }}></span>
                                 </div>
                                 <div className="description-container" onMouseLeave={() => closeDescriptionPopup(x.id)}>
                                     <span onMouseOver={() => toggleDescriptionPopup(x.id)} onClick={() => toggleDescriptionPopup(x.id)}>Description</span>
@@ -91,7 +122,7 @@ export default function Catalog() {
                             <div key={x.id} className="card">
                                 <div className="image-container">
                                     <img src={x.images[0].src} className="card-image" />
-                                    <span dangerouslySetInnerHTML={{ __html: name[i] }}></span>
+                                    <span dangerouslySetInnerHTML={{ __html: names[i] }}></span>
                                 </div>
                                 <div className="description-container" onMouseLeave={() => closeDescriptionPopup(x.id)} >
                                     <span onMouseOver={() => toggleDescriptionPopup(x.id)} onClick={() => toggleDescriptionPopup(x.id)}>Description</span>
