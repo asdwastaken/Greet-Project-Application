@@ -17,11 +17,27 @@ body {
 main {
   position: relative;
   padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.loading-container,
+.loading-container-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 80px;
+}
+
+.loading-container-top {
+  top: 100px;
+  bottom: auto;
 }
 
 @media (min-width: 2000px) {
   body {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 @media (max-width: 1600px) {

@@ -23,10 +23,17 @@ export default function Catalog() {
         setPageNumber,
         selectedSortOption,
         onSortChangeHandler,
-        sortProducts } = useContext(context);
+        sortProducts,
+        filterInputValues,
+        onFilterChangeHandler,
+        filterProducts,
+        resetFilters,
+        loading,
+        setLoading,
+        loadingTop,
+         } = useContext(context);
 
 
-    const [loading, setLoading] = useState(false);
 
     const [lastCardInViewRef, lastCardInView] = useInView({
         triggerOnce: true,
@@ -71,25 +78,118 @@ export default function Catalog() {
                 <div className="dropdown-sort">
                     <form onSubmit={sortProducts}>
                         <select className="form-select" value={selectedSortOption} onChange={onSortChangeHandler}>
-                            <option value="" disabled selected>Sort</option>
-                            <option value="ascending">Ascending</option>
-                            <option value="descending">Descending</option>
+                            <option value="" selected disabled>Sort</option>
+                            <option value="ascending">Name Ascending</option>
+                            <option value="descending">Name Descending</option>
+                            <option value="price_ascending">Price Ascending</option>
+                            <option value="price_descending">Price Descending</option>
                         </select>
                     </form>
                 </div>
 
                 <div className="dropdown-filter">
-                    <form onSubmit={sortProducts}>
-                   
-                    </form>
+                    <div className="filter-container">
+                        <form onSubmit={filterProducts}>
+                            <div className="dropdown">
+                                <button className="filter-btn form-select" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Filter
+                                </button>
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="influencers"
+                                            value={filterInputValues.influencers}
+                                            onChange={onFilterChangeHandler}
+                                            checked={filterInputValues.influencers} />
+                                        <label className="form-check-label" htmlFor="influencers">
+                                            Influencers
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="athletes"
+                                            value={filterInputValues.athletes}
+                                            onChange={onFilterChangeHandler}
+                                            checked={filterInputValues.athletes} />
+                                        <label className="form-check-label" htmlFor="athletes">
+                                            Athletes
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="models"
+                                            value={filterInputValues.models}
+                                            onChange={onFilterChangeHandler}
+                                            checked={filterInputValues.models} />
+                                        <label className="form-check-label" htmlFor="models">
+                                            Models
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="new-talents"
+                                            value={filterInputValues["new-talents"]}
+                                            onChange={onFilterChangeHandler}
+                                            checked={filterInputValues["new-talents"]} />
+                                        <label className="form-check-label" htmlFor="new-talents">
+                                            New Talents
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <input
+                                            className="form-check-input"
+                                            type="checkbox"
+                                            name="music"
+                                            value={filterInputValues.music}
+                                            onChange={onFilterChangeHandler}
+                                            checked={filterInputValues.music} />
+                                        <label className="form-check-label" htmlFor="music">
+                                            Music
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="submit" value="Apply Filters" className="filters-action-btn" />
+                                        <input type="button" value="Reset Filters" className="filters-action-btn" id="filter-reset-btn" onClick={resetFilters} />
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </form>
+
+                    </div>
                 </div>
             </div>
 
+
+            {loadingTop &&
+                <div className="loading-container-top">
+                    <RotatingLines
+                        strokeColor="#7d86c8"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="96"
+                        visible={true}
+                    />
+                </div>
+            }
+            
             <div className="catalog">
-
-
                 {products.map((x, i) => {
-                    if (i === products.length - 1) {
+                    if (i === products.length - 1 && Object.values(filterInputValues).every(x => x === false)) {
                         return (
                             <div key={x.id} className="card" ref={lastCardInViewRef}>
                                 <div className="image-container">
@@ -158,6 +258,7 @@ export default function Catalog() {
                     />
                 </div>
             }
+
         </>
     )
 }
