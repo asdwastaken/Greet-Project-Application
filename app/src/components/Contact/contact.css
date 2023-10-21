@@ -28,4 +28,35 @@
 }
 .contact-container-inner span {
   margin-bottom: 20px;
+}
+
+@media (max-width: 990px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .contact h1 {
+    font-size: 2em;
+  }
+  .contact .button {
+    padding: 5px 10px;
+  }
+  .contact-container-inner {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  .contact-container-inner span {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 400px) {
+  .contact-container-inner {
+    padding: 15px;
+  }
+  .contact-container-inner span {
+    font-size: 0.8em;
+  }
 }/*# sourceMappingURL=contact.css.map */
