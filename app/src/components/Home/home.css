@@ -1,8 +1,8 @@
 .home {
-  color: #23282D;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  color: #23282D;
   height: 100vh;
 }
 .home h1 {
@@ -16,9 +16,9 @@
 
 .home-container {
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .home-headings {
@@ -30,10 +30,10 @@
 
 .home-images-container {
   display: flex;
-  height: 100%;
-  width: 50%;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 50%;
   margin-left: auto;
 }
 

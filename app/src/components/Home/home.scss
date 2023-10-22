@@ -1,11 +1,9 @@
 @import '../../styles/variables/variables';
+@import '../../styles/mixins/mixins';
 
 .home {
-
+    @include flexCenter;
     color: $primary-text-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
 
     h1 {
@@ -24,10 +22,9 @@
 }
 
 .home-container {
-    display: flex;
+    @include flexCenter;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .home-headings {
@@ -38,11 +35,9 @@
 }
 
 .home-images-container {
-    display: flex;
+    @include flexCenter;
     height: 100%;
     width: 50%;
-    justify-content: center;
-    align-items: center;
     margin-left: auto;
 }
 
@@ -227,4 +222,3 @@
 
     }
 }
-
