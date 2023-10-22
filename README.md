@@ -2,7 +2,7 @@
 
 App Overview:
 
-This React app is designed for a digital catalog displaying a list of products, with sorting and filtering options. The dependencies for the app are: React, React Router, react-intersection-observer, and react-loader-spinner. Additionally, Bootstrap has also been integrated into app and primarily used for the sort and filter dropdowns in the catalog component.
+This React app is designed for a digital catalog displaying a list of products, with sorting and filtering options. The dependencies for the app are: React, react-router-dom, react-intersection-observer, and react-loader-spinner. Additionally, Bootstrap has also been integrated into app and primarily used for the sort and filter dropdowns in the catalog component.
 
 
 The main components include:
